@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amazon clone</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/amazon-fonts@1.0.1/fonts/stylesheet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <!-- box1 -->
+            <div class="nav-logo" id="epic">
+                <div class="logo"></div>
+            </div>
+
+            <!-- box2 -->
+            <div class="nav-location" id="epic">
+                <div class="location">
+                  <i class="fa-solid fa-location-dot" style="color: #ffffff;" id="locate"></i>
+                </div>
+                <div class="nav-address">
+                    <p1>Deliver to Amit</p1>
+                    <br>
+                    <p2><b>New Delhi 110007</b></p2>
+                </div>
+            </div>
+
+            <!-- box3 -->
+            <div class="nav-search">
+                <select class="dropdown" id="searchDropdown" onchange="adjustDropdownWidth()">
+        
+                    
+                        <option class="dropdown-option"> All </option>
+                        <option class="dropdown-option"> Arts & Crafts </option>
+                        <option class="dropdown-option"> Automotive </option>
+                        <option class="dropdown-option"> Baby </option>
+                        <option class="dropdown-option"> Beauty & Personal care </option>
+                        <option class="dropdown-option"> Books </option>
+                        <option class="dropdown-option"> Boy's Fashion </option>
+                        <option class="dropdown-option"> Computers </option>
+                        <option class="dropdown-option"> Deals </option>
+                        <option class="dropdown-option"> Digital Music </option>
+                        <option class="dropdown-option"> Electronics </option>
+                        <option class="dropdown-option"> Girl's Fashion </option>
+                        <option class="dropdown-option"> Health & Household </option>
+                        <option class="dropdown-option"> Home & Kitchen </option>
+                        <option class="dropdown-option"> Industrial & Scientific </option>
+                        <option class="dropdown-option"> Kindle Store </option>
+                        <option class="dropdown-option"> Luggage </option>
+                        <option class="dropdown-option"> Men's Fashion </option>
+                        <option class="dropdown-option"> Movies & TV </option>
+                        <option class="dropdown-option"> Music, CDs & Vinyls </option>
+                        <option class="dropdown-option"> Pet Suppliers </option>
+                        <option class="dropdown-option"> Prime Video </option>
+                        <option class="dropdown-option"> Software </option>
+                        <option class="dropdown-option"> Sports & Outdoors </option>
+                        <option class="dropdown-option"> Tools & Home Improvement </option>
+                        <option class="dropdown-option"> Toys & Games </option>
+                        <option class="dropdown-option"> Video Games </option>
+                        <option class="dropdown-option"> Women's Fashion </option>
+                    
+                    
+                </select>
+
+                <input type="search" class="searchbox" placeholder="Search Amazon"> 
+                <button id="magsearch"><i class="fa-solid fa-magnifying-glass" ></i></button>
+            </div>
+            <script>
+                function adjustDropdownWidth() {
+                    var dropdown = document.getElementById('searchDropdown');
+                    var searchBox = document.querySelector('.searchbox');
+                    var selectedOption = dropdown.options[dropdown.selectedIndex].text;
+        
+                    var tempSpan = document.createElement('span');
+                    tempSpan.style.visibility = 'hidden';
+                    tempSpan.style.whiteSpace = 'nowrap';
+                    tempSpan.style.fontSize = '13px'; 
+                    tempSpan.innerHTML = selectedOption;
+        
+                    document.body.appendChild(tempSpan);
+                    var newWidth = tempSpan.offsetWidth + 25; 
+                    document.body.removeChild(tempSpan);
+        
+                    if (selectedOption === 'All') {
+                        newWidth = 53;
+                    }
+        
+                    dropdown.style.width = newWidth + 'px';
+                    searchBox.style.width = `calc(100% - ${newWidth + 45}px)`;
+                }
+        
+                adjustDropdownWidth();
+        
+                document.getElementById('searchDropdown').addEventListener('change', adjustDropdownWidth);
+            </script>
+            
+            
+            <!-- box4 -->
+            <div class="nav-lang" id="epic">
+                <image src="ind.svg" alt="ind" id="flag">
+                    <select id="ind-en">
+                        <option><b>EN</b></option>
+                    </select>
+            </div>
+
+            <!-- box5 -->
+            <div class="accounts" id="epic">
+                <p3>Hello, Amit</p3>
+                <br>
+                <select id="ind-en">
+                    <option>Account & Lists</option>
+                </select>
+            </div>
+
+            <!-- box6 -->
+            <div class="orders" id="epic">
+                <p4>Returns</p4>
+                <br>
+                <p2> <b>& Orders </b></p2>
+            </div>
+
+            <!-- box7 -->
+            <div class="cart" id="epic">
+                <i class="fa-solid fa-cart-shopping" style="color: #ffffff;" id="cartbag"></i>
+                <p5><b> Cart </b></p5>
+            </div>
+        </div>
+        <div class="navbar2" >
+            <div class="nav2-a1" id="epic">
+                <i class="fa-solid fa-bars fa-xl" style="color: #ffffff;"></i>
+                <p6><b>All</b></p6>
+            </div>
+            <div class="nav-a3" id="epic">
+                <p6> Today's Deals</p6>
+            </div>
+            <div class="nav-a4" id="epic">
+                <p6> Buy Again </p6>
+            </div>
+            <div class="nav-a5" id="epic">
+                <p6>Customer service</p6>
+            </div>
+            <div class="nav-a6" id="epic">
+                <p6>Gift Cards</p6>
+            </div>
+            <div class="nav-a7" id="epic">
+                <p6> Registry </p6>
+            </div>
+            <div class="nav-a8" id="epic">
+                <p6> Sell </p6>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <div class="left">
+                <i> <img src="chevron-left.svg" id="left-chv"> </i>
+            </div>
+            <div class="right">
+                <i> <img src="chevron-right.svg" id="right-chv"> </i>
+            </div>
+            <div class="cont1">
+                <p7>You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery.</p7>
+                <a href="https://amazon.in">Click here to go to amazon.in</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cont2">
+        <div class="procontainer">
+            <p8> Deals in PCs </p8>
+            <img src="prod1.jpg" id="proimg2">
+            <p9> Shop now </p9>
+        </div>
+        <div class="procontainer">
+            <p8> Home decor under $50 </p8>
+            <img src="prod2.jpg" id="proimg2">
+            <p9> Shop now </p9>
+        </div>
+        <div class="procontainer">
+            <p8> Toys under $25  </p8>
+            <img src="prod3.jpg" id="proimg2">
+            <p9> Shop now </p9>
+        </div>
+        <div class="procontainer">
+            <p8> Beauty steals under $25 </p8>
+            <img src="nprod1.jpg" id="proimg2">
+            <p9> Shop now </p9>
+        </div>
+        <div class="procontainer">
+            <p8> Shop activity trackers and smartwatches </p8>
+            <img src="epro1.jpg" id="proimg3">
+            <p9> Shop now </p9>
+        </div>
+        <div class="procontainer">
+            <p8> Great deals on laptops </p8>
+            <img src="epro2.jpg" id="proimg2">
+            <p9> Shop now </p9>
+        </div>
+        <div class="procontainer">
+            <p8> Great prices on shoes </p8>
+            <img src="epro3.jpg" id="proimg2">
+            <p9> Shop now </p9>
+        </div>
+        <div class="procontainer">
+            <p8> A whole new way to work </p8>
+            <img src="npro1.jpg" id="proimg2">
+            <p9> Shop now </p9>
+        </div>
+        <div class="procontainer">
+            <p8> Upgrade your office furniture </p8>
+            <img src="npro2.jpg" id="proimg3">
+            <p9> Shop now </p9>
+        </div>
+        <div class="procontainer">
+            <p8> Kitchen essentials </p8>
+            <img src="npro3.jpg" id="proimg2">
+            <p9> Shop now </p9>
+        </div>
+        <div class="procontainer">
+            <p8> Home & kitchen </p8>
+            <img src="npro4.jpg" id="proimg2">
+            <p9> Shop now </p9>
+        </div>
+        <div class="procontainer">
+            <p8> Sports </p8>
+            <img src="npro5.jpg" id="proimg2">
+            <p9> Shop now </p9>
+        </div>
+        
+    </div>
+
+    <div class="cosmetics">
+
+        <div class="care">
+            <p11> Best sellers in beauty & personal care</p11>
+        </div>
+        
+            <div class="beauty">
+                
+                <img src="prod4.jpg" id="prodimg3">
+                <img src="prod5.jpg" id="prodimg3">
+                <img src="prod6.jpg" id="prodimg3">
+                <img src="prod7.jpg" id="prodimg3">
+                <img src="prod8.jpg" id="prodimg3">
+                <img src="prod9.jpg" id="prodimg3">
+                <img src="prod10.jpg" id="prodimg3">
+                <img src="prod11.jpg" id="prodimg3">
+                <img src="prod12.jpg" id="prodimg3">
+                <img src="prod13.jpg" id="prodimg3">
+                <img src="prod14.jpg" id="prodimg3">
+                <img src="prod15.jpg" id="prodimg3">
+                <img src="prod16.jpg" id="prodimg3">
+            </div>
+    </div>
+
+    <!-- footer starts from here -->
+
+    <footer>
+
+        <div class="f1">
+            <p12><span> Back to top </span></p12>
+        </div>
+
+        <div class="f2">
+            <div class="f2-col1">
+                <p13><span>Get to Know Us</span></p13>
+                <br>
+                <p14><span> Careers </span></p14>
+                <br>
+                <p14><span> Blog </span></p14>
+                <br>
+                <p14><span> About Amazon</span></p14>
+                <br>
+                <p14><span> Investor Relations </span></p14>
+                <br>
+                <p14><span> Amazon Devices </span></p14>
+                <br>
+                <p14><span> Amazon Science </span></p14>
+                
+            </div>
+            <div class="f2-col2">
+                <p13><span>Make Money With Us</span></p13>
+                <br>
+                <p14><span> Sell Products on Amazon </span></p14>
+                <br>
+                <p14><span> Sell apps on Amazon </span></p14>
+                <br>
+                <p14><span> Become an Affiliate </span></p14>
+                <br>
+                <p14><span> Advertise Your Products </span></p14>
+                <br>
+                <p14><span> Self-Publish With Us</span></p14>
+                <br>
+                <p14><span> Host an Amazon Hub </span></p14>
+                <br>
+                <p14><span> > See More Make Money with Us</span></p14>
+
+            </div>
+            <div class="f2-col3">
+                <p13><span>Amazon Payment Products</span></p13>
+                <br>
+                <p14><span> Amazon Business Card</span></p14>
+                <br>
+                <p14><span> Shop with Points </span></p14>
+                <br>
+                <p14><span> Reload Your Balance </span></p14>
+                <br>
+                <p14><span> Amazon Currency Converter </span></p14>
+                
+            </div>
+
+            <div class="f2-col4">
+                <p13><span>Let Us Help You</span></p13>
+                <br>
+                <p14><span> Amazon and COVID-19 </span></p14>
+                <br>
+                <p14><span> Your Account </span></p14>
+                <br>
+                <p14><span> Your Orders</span></p14>
+                <br>
+                <p14><span> Shipping Rates & Policies </span></p14>
+                <br>
+                <p14><span> Returns & Replacements </span></p14>
+                <br>
+                <p14><span> Manage Your Content and Devices </span></p14>
+                <br>
+                <p14><span> Help</span></p14>
+
+            </div>
+
+            <div class="f2-row">
+                <img src="amazonsymbol.png" alt="amazon" id="row-logo"> 
+                <div class="lang-footer">
+                    <div class="footer-lang" id="footer-block">
+                        <img src="globe.svg" id="globe">
+                        <select id="eng-foot">
+                            <option>English</option>
+                        </select>
+                    </div>
+                    <div class="dollar-foot" id="footer-block2">
+                        <img src="dollar.svg" id="globe">
+                            <p15> USD - U.S. Dollar </p15>
+                    </div>
+                    <div class="country-footer" id="footer-block3">
+                        <img src="ind.svg" id="globe">
+                            <p16> India </p16>
+                    </div>
+                </div>
+            <div class="copyright-footer">
+                <p17><span> <i class="fa-regular fa-copyright"></i> 
+                 1996-2024, Amazon.com, Inc. or it's affiliates</span></p17> 
+                 <p18><b>Disclaimer:</b> &nbsp; This project is a clone of the Amazon website created solely for educational purposes. It is not intended for commercial use. Amazon and its related marks are trademarks or registered trademarks of &nbsp;Amazon.com, Inc. or its affiliates. This project is not affiliated with, sponsored by, or endorsed by Amazon. All trademarks, logos, and brand names are the property of their respective owners.</p18>
+                 <br>
+                 <p19>Click here to visit &nbsp; <a href="https://amazon.com" style="text-decoration: none; color: #febd69"> Amazon.com </a></p19>
+                 <br>
+                 <p19> THANK YOU FOR VISIT !! Created by Amit. </p19>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
